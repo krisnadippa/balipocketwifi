@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/images/balipocketlogo.png",
+    shortcut: "/images/balipocketlogo.png",
     apple: "/images/balipocketlogo.png",
   },
   robots: {

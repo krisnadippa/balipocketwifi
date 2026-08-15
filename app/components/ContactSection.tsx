@@ -205,15 +205,19 @@ export default function ContactSection() {
 
         {/* Right Column: Palm Banner + 2 Info Cards */}
         <div className="lg:col-span-6 flex flex-col space-y-6">
-          {/* Decorative Palm Image */}
-          <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-lg border border-neutral-200/80 group">
-            <Image
-              src="/images/herowf.png"
-              alt="Lush tropical palm canopy in Bali"
-              fill
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              sizes="(max-width: 1024px) 100vw, 600px"
-            />
+          {/* Google Maps Embed */}
+          <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-lg border border-neutral-200/80">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.9047874808143!2d115.18044238008828!3d-8.795015467342418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c71888bd5788975%3A0xfcb0f6d4a2fe8715!2sInfinity%20Go%20-%20Bali%20Indonesia%20Tour%20%26%20Travel!5e0!3m2!1sid!2sid!4v1786802800580!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Infinity Go - Bali Indonesia Tour & Travel Map"
+              className="w-full h-full"
+            ></iframe>
           </div>
 
           {/* 2 Contact Cards Side by Side */}

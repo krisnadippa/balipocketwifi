@@ -82,8 +82,8 @@ export default function Navbar({ onOpenBooking, onOpenCoverage, isPageRevealed =
               href="#hero"
               className="flex items-center cursor-pointer group"
             >
-              <div className={`relative h-10 w-24 sm:h-12 sm:w-28 transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03] ${
-                isPageRevealed ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              <div className={`relative h-10 w-24 sm:h-12 sm:w-28 transition-opacity duration-[800ms] ease-out group-hover:scale-[1.03] ${
+                isPageRevealed ? "opacity-100" : "opacity-0"
               }`}>
                 <Image
                   src="/images/balipocketlogo.png"

@@ -13,6 +13,8 @@ import BookingModal from "./components/BookingModal";
 import CoverageModal from "./components/CoverageModal";
 import ReviewsModal from "./components/ReviewsModal";
 import Lenis from "lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -39,6 +41,8 @@ export default function Home() {
       window.scrollTo(0, 0);
     }
 
+    gsap.registerPlugin(ScrollTrigger);
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo-like curve
@@ -48,12 +52,12 @@ export default function Home() {
     lenisRef.current = lenis;
     lenis.scrollTo(0, { immediate: true }); // Reset scroll to top instantly
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+    // Connect Lenis to ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
@@ -90,6 +94,193 @@ export default function Home() {
       clearTimeout(timer4);
     };
   }, []);
+
+  // GSAP Scroll Animations
+  useEffect(() => {
+    if (isLoading) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Hero Button Anim only (texts are static/revealed by curtain)
+    gsap.fromTo(
+      "#hero button",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 0.4,
+      }
+    );
+
+    // 2. Feature Section ScrollTrigger
+    // Left Column
+    gsap.fromTo(
+      "#features > div > div:nth-child(1)",
+      { opacity: 0, x: -40 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#features",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Middle Column (Carousel)
+    gsap.fromTo(
+      "#features > div > div:nth-child(2)",
+      { opacity: 0, scale: 0.96, y: 30 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#features",
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Right Column
+    gsap.fromTo(
+      "#features > div > div:nth-child(3)",
+      { opacity: 0, x: 40 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#features",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // 3. Pricing Section ScrollTrigger
+    // Header
+    gsap.fromTo(
+      "#plans > div:nth-child(1)",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#plans",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Pricing Cards
+    gsap.fromTo(
+      "#plans > div:nth-child(2) > div",
+      { opacity: 0, y: 50, scale: 0.97 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#plans > div:nth-child(2)",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // 4. FAQ Section ScrollTrigger
+    // Header
+    gsap.fromTo(
+      "#faq > div:nth-child(1)",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#faq",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Accordion Items
+    gsap.fromTo(
+      "#faq > div:nth-child(2) > div",
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#faq > div:nth-child(2)",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // 5. Contact Section ScrollTrigger
+    // Header
+    gsap.fromTo(
+      "#contact > div:nth-child(1)",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Columns
+    gsap.fromTo(
+      "#contact > div:nth-child(2) > div",
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#contact > div:nth-child(2)",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Clean up
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [isLoading]);
 
   // Global Smooth Scroll Hook for perfect offsets using Lenis
   useEffect(() => {

@@ -49,6 +49,7 @@ export default function HeroSection({ onRentClick, isActive }: HeroSectionProps)
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onRentClick}
+              style={{ opacity: 0 }}
               className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white/80 bg-transparent hover:bg-white text-white hover:text-neutral-950 text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
             >
               <span>Rent Now</span>
