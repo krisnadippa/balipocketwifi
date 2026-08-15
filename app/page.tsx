@@ -100,7 +100,7 @@ export default function Home() {
 
       const href = anchor.getAttribute("href");
       if (href && href.startsWith("#") && href.length > 1) {
-        const targetElement = document.querySelector(href);
+        const targetElement = document.querySelector(href) as HTMLElement | null;
         if (targetElement) {
           e.preventDefault();
           if (lenisRef.current) {
