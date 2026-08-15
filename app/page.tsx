@@ -1,69 +1,222 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import FeatureSection from "./components/FeatureSection";
+import PricingSection from "./components/PricingSection";
+import FaqSection from "./components/FaqSection";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
+import BookingModal from "./components/BookingModal";
+import CoverageModal from "./components/CoverageModal";
+import ReviewsModal from "./components/ReviewsModal";
+import Lenis from "lenis";
 
 export default function Home() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedPlanInfo, setSelectedPlanInfo] = useState({
+    name: "Explorer",
+    price: "Rp455k",
+  });
+  const [isCoverageOpen, setIsCoverageOpen] = useState(false);
+  const [isReviewsOpen, setIsReviewsOpen] = useState(false);
+
+  // Preloader State Hooks
+  const [isLoading, setIsLoading] = useState(true);
+  const [textVisible, setTextVisible] = useState(false);
+  const [curtainActive, setCurtainActive] = useState(false);
+  const [heroActive, setHeroActive] = useState(false);
+
+  const lenisRef = useRef<Lenis | null>(null);
+
+  // Buttery-smooth scroll initialization (Lenis)
+  useEffect(() => {
+    // Disable browser default scroll restoration
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo-like curve
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+    lenis.scrollTo(0, { immediate: true }); // Reset scroll to top instantly
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    // 1. Fade in text shortly after loading starts
+    const timer1 = setTimeout(() => {
+      setTextVisible(true);
+    }, 150);
+
+    // 2. Fade out text
+    const timer2 = setTimeout(() => {
+      setTextVisible(false);
+    }, 1300);
+
+    // 3. Slide up white curtain and trigger hero card zoom-in
+    const timer3 = setTimeout(() => {
+      setCurtainActive(true);
+      setHeroActive(true);
+    }, 1750);
+
+    // 4. Remove loader element from DOM
+    const timer4 = setTimeout(() => {
+      setIsLoading(false);
+    }, 2750);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+      clearTimeout(timer4);
+    };
+  }, []);
+
+  // Global Smooth Scroll Hook for perfect offsets using Lenis
+  useEffect(() => {
+    const handleHashClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          if (lenisRef.current) {
+            lenisRef.current.scrollTo(targetElement, {
+              offset: -84,
+              duration: 1.2,
+            });
+          } else {
+            // Fallback if lenis is not active yet
+            const navbarHeight = 84;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", handleHashClick);
+    return () => document.removeEventListener("click", handleHashClick);
+  }, []);
+
+  const handleOpenBooking = (planName = "Explorer", price = "Rp455k") => {
+    setSelectedPlanInfo({ name: planName, price });
+    setIsBookingOpen(true);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col font-sans selection:bg-[#A3E635] selection:text-black">
+      {/* Opening curtain preloader */}
+      {isLoading && (
+        <>
+          {/* Brand Logo - Glides up and scales to merge into the navbar logo */}
+          <div
+            className={`fixed z-[110] pointer-events-none transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              curtainActive
+                ? "top-4 left-4 sm:left-6 md:left-1/2 -translate-y-0 translate-x-0 md:-translate-x-1/2 h-10 w-24 sm:h-12 sm:w-28 opacity-100"
+                : textVisible
+                ? "top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-20 w-44 sm:h-24 sm:w-52 opacity-100"
+                : "top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-20 w-44 sm:h-24 sm:w-52 opacity-0 scale-95"
+            }`}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/balipocketlogo.png"
+                alt="Bali Pocket WiFi Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Single Curtain Panel (slides upwards) */}
+          <div
+            className={`fixed inset-0 bg-white z-[100] transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+              curtainActive ? "-translate-y-full" : "translate-y-0"
+            }`}
+          />
+        </>
+      )}
+
+      {/* Sticky Top Header / Navbar */}
+      <Navbar
+        onOpenBooking={() => handleOpenBooking()}
+        onOpenCoverage={() => setIsCoverageOpen(true)}
+        isPageRevealed={heroActive}
+      />
+
+      {/* Main Content Area */}
+      <main className="flex-1 w-full overflow-hidden">
+        {/* Hero Section with Palm Canopy Background */}
+        <HeroSection onRentClick={() => handleOpenBooking("Explorer", "Rp455k")} isActive={heroActive} />
+
+        {/* 3-Column Benefit & Feature Section */}
+        <FeatureSection
+          onBookClick={() => handleOpenBooking("Explorer", "Rp455k")}
+          onReviewsClick={() => setIsReviewsOpen(true)}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* 4-Card Pricing Plans Section with Explorer dark highlight */}
+        <PricingSection
+          onSelectPlan={(name, price) => handleOpenBooking(name, price)}
+        />
+
+        {/* Interactive FAQ Section */}
+        <FaqSection />
+
+        {/* 2-Column Contact Us Section */}
+        <ContactSection />
       </main>
+
+      {/* Luxury Dark Footer */}
+      <Footer onOpenCoverage={() => setIsCoverageOpen(true)} />
+
+      {/* Interactive Modals */}
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        selectedPlanName={selectedPlanInfo.name}
+        selectedPlanPrice={selectedPlanInfo.price}
+      />
+
+      <CoverageModal
+        isOpen={isCoverageOpen}
+        onClose={() => setIsCoverageOpen(false)}
+      />
+
+      <ReviewsModal
+        isOpen={isReviewsOpen}
+        onClose={() => setIsReviewsOpen(false)}
+      />
     </div>
   );
 }
