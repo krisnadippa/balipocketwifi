@@ -88,6 +88,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "MqMjhmYpqO2aos3b3oL8h-Y7Rj1EP8GbdjR7x3T5l20",
+  },
 };
 
 const jsonLd = {
@@ -240,6 +243,7 @@ export default function RootLayout({
       className={`${plusJakarta.variable} ${playfair.variable} scroll-smooth`}
     >
       <head>
+        <meta name="google-site-verification" content="MqMjhmYpqO2aos3b3oL8h-Y7Rj1EP8GbdjR7x3T5l20" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
