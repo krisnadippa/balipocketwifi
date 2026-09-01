@@ -61,16 +61,15 @@ export default function FeatureSection({
             <div className="flex items-center gap-2 mb-4">
               <span className="w-2.5 h-2.5 rounded-full bg-[#A3E635]"></span>
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-600">
-                RELIABLE CONNECTION
+                #1 BALI POCKET WIFI RENTAL
               </span>
             </div>
 
             {/* Headline with muted "losing touch" */}
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-950 leading-[1.15] tracking-tight">
-              Travel across <br className="hidden sm:inline" />
-              the Island <br className="hidden sm:inline" />
-              of the Gods <br className="hidden sm:inline" />
-              without{" "}
+              Sewa WiFi Bali Pocket <br className="hidden sm:inline" />
+              & WiFi Rental Bali <br className="hidden sm:inline" />
+              Without{" "}
               <span className="text-neutral-400 font-normal">
                 losing touch
               </span>
@@ -83,14 +82,14 @@ export default function FeatureSection({
                   <Check className="w-3.5 h-3.5 stroke-[3] text-[#84CC16]" />
                 </div>
                 <span className="text-sm font-semibold text-neutral-800">
-                  Unlimited Data
+                  Unlimited 4G/LTE Data
                 </span>
                 <span className="text-neutral-300">|</span>
                 <div className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-emerald-600">
                   <Check className="w-3.5 h-3.5 stroke-[3] text-[#84CC16]" />
                 </div>
                 <span className="text-sm font-semibold text-neutral-800">
-                  Connect up to 5 Devices
+                  Connect up to 8 Devices
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -105,10 +104,7 @@ export default function FeatureSection({
 
             {/* Paragraph narrative */}
             <p className="mt-6 text-sm sm:text-base text-neutral-600 leading-relaxed">
-              Our pocket WiFi provides seamless coverage from Canggu to Ubud.
-              Keep your maps updating, your socials buzzing, and your emails
-              syncing without the hassle of changing SIM cards or relying on
-              spotty cafe networks.
+              Bali Pocket WiFi provides seamless high-speed 4G/LTE internet coverage across Bali (Canggu, Seminyak, Ubud, Uluwatu, and DPS Airport). Rent portable WiFi in Bali with free airport pickup or hotel delivery.
             </p>
           </div>
 

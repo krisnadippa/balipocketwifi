@@ -19,7 +19,7 @@ export default function HeroSection({ onRentClick, isActive }: HeroSectionProps)
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/herowf.png"
-            alt="Lush tropical palm canopy in Bali"
+            alt="Bali Pocket WiFi Rental - Sewa WiFi Pocket Bali Airport DPS"
             fill
             priority
             className="object-cover object-center brightness-[0.88] contrast-[1.05]"
@@ -35,14 +35,13 @@ export default function HeroSection({ onRentClick, isActive }: HeroSectionProps)
         {/* Center Main Headline & CTA */}
         <div className="relative z-10 my-auto py-6 sm:py-8 max-w-4xl flex flex-col items-center">
           {/* Kicker sub-headline */}
-          <div className="text-white/70 text-[10px] sm:text-xs md:text-sm font-bold tracking-widest uppercase mb-4 sm:mb-6">
-            BALI WIFI POCKET RENTAL - UNLIMITED DATA, HIGH-SPEED 4G/LTE
+          <div className="text-white/80 text-[10px] sm:text-xs md:text-sm font-bold tracking-widest uppercase mb-4 sm:mb-6">
+            #1 BALI POCKET WIFI RENTAL — SEWA WIFI BALI UNLIMITED 4G/LTE
           </div>
 
           <h1 className="font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-[84px] text-white tracking-tight leading-[1.08] drop-shadow-md">
-            Stay Connected
-            <br />
-            in Bali
+            Bali Pocket WiFi &<br />
+            WiFi Rental Bali
           </h1>
 
           {/* Ghost Button in the middle */}

@@ -224,7 +224,9 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {/* Call Us Card */}
             <a
-              href="tel:+6282342431717"
+              href="https://wa.me/6282342431717?text=Halo!%20Saya%20tertarik%20dengan%20sewa%20Bali%20Pocket%20WiFi.%20Boleh%20minta%20informasi%20lebih%20lanjut%3F"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-2xl border border-neutral-200/80 p-5 bg-white shadow-xs hover:shadow-md hover:border-neutral-300 transition-all flex flex-col justify-between group"
             >
               <div className="w-10 h-10 rounded-xl bg-neutral-100 flex items-center justify-center text-neutral-800 mb-3 group-hover:bg-[#A3E635] transition-colors">

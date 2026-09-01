@@ -48,13 +48,13 @@ export default function FaqSection() {
       {/* Section Header */}
       <div className="text-center mb-12 sm:mb-16">
         <span className="text-[11px] font-bold tracking-widest text-neutral-500 uppercase">
-          FREQUENTLY ASKED QUESTIONS
+          FAQ — WIFI RENTAL BALI & SEWA POCKET WIFI
         </span>
         <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-950 tracking-tight">
-          Got Questions? We&apos;re Here.
+          Sewa WiFi Bali Pocket FAQ
         </h2>
         <p className="mt-3 text-sm text-neutral-600">
-          Everything you need to know about renting a portable WiFi in Bali.
+          Everything you need to know about Bali Pocket WiFi &amp; WiFi rental in Bali.
         </p>
       </div>
 
