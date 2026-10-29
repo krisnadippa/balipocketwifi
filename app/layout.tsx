@@ -21,37 +21,43 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://balipocketwifi.com")
   ),
-  title: "Bali Pocket WiFi — #1 WiFi Rental Bali & Sewa WiFi Pocket Bali",
+  title: "Sewa WiFi Pocket Bali & Sewa WiFi Bali #1 — Bali Pocket WiFi Rental",
   description:
-    "Rental Wifi Pocket Bali #1 dengan Kuota Unlimited 4G/LTE. Sewa Pocket WiFi Bali murah & praktis dengan gratis pengantaran Bandara Ngurah Rai (DPS), Canggu, Seminyak, & Ubud.",
+    "Sewa WiFi Pocket Bali & Rental WiFi Bali #1 Unlimited 4G/LTE. Layanan sewa pocket WiFi Bali murah, kuota tanpa batas, bebas antre IMEI, & gratis antar hotel / Bandara Ngurah Rai (DPS).",
   keywords: [
-    "wifi rental bali",
-    "wifi pocket bali",
-    "sewa wifi bali pocket",
-    "bali pocket wifi",
+    "sewa wifi pocket bali",
     "sewa wifi bali",
+    "sewa bali pocket wifi",
+    "wifi pocket bali",
     "pocket wifi bali",
+    "rental wifi bali",
+    "sewa pocket wifi bali",
+    "sewa mifi bali",
+    "sewa modem bali",
+    "harga sewa wifi bali",
+    "sewa wifi murah bali",
+    "sewa wifi bali airport",
+    "bali pocket wifi",
+    "bali pocket wifi rental",
+    "wifi rental bali",
     "rent wifi bali",
     "bali portable wifi rental",
-    "bali airport wifi rental",
-    "sewa pocket wifi bali murah",
-    "rental wifi bali murah",
     "travel wifi bali",
     "portable hotspot bali",
     "unlimited 4g wifi bali",
-    "sewa modem bali",
+    "sewa modem wifi bali",
   ],
   alternates: {
     canonical: "/",
     languages: {
-      "en-US": "/",
       "id-ID": "/",
+      "en-US": "/",
     },
   },
   openGraph: {
-    title: "Bali Pocket WiFi — #1 WiFi Rental Bali & Sewa WiFi Pocket Bali",
+    title: "Sewa WiFi Pocket Bali & Sewa WiFi Bali #1 — Bali Pocket WiFi Rental",
     description:
-      "Sewa Pocket WiFi Bali #1 Unlimited 4G/LTE. Penjemputan di Bandara Ngurah Rai (DPS) atau antar ke Hotel / Villa Canggu, Ubud, Seminyak, & Uluwatu.",
+      "Sewa WiFi Pocket Bali #1 Kuota Unlimited 4G/LTE. Bebas antre registrasi IMEI, baterai awet 15 jam. Gratis penjemputan Bandara Ngurah Rai (DPS) & antar ke Hotel / Villa Canggu, Seminyak, Ubud, & Uluwatu.",
     url: "/",
     siteName: "Bali Pocket WiFi",
     images: [
@@ -59,17 +65,17 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Bali Pocket WiFi - Unlimited 4G/LTE WiFi Rental Bali",
+        alt: "Sewa WiFi Pocket Bali - Unlimited 4G/LTE Bali Pocket WiFi Rental",
       },
     ],
     type: "website",
-    locale: "en_US",
+    locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bali Pocket WiFi — #1 WiFi Rental Bali & Sewa WiFi Pocket Bali",
+    title: "Sewa WiFi Pocket Bali & Sewa WiFi Bali #1 — Bali Pocket WiFi Rental",
     description:
-      "Sewa Pocket WiFi Bali #1 Unlimited 4G/LTE. Penjemputan di Bandara Ngurah Rai (DPS) atau antar ke Hotel / Villa.",
+      "Sewa Pocket WiFi Bali #1 Unlimited 4G/LTE. Gratis penjemputan di Bandara Ngurah Rai (DPS) atau antar ke Hotel / Villa seluruh Bali.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
@@ -99,17 +105,25 @@ const jsonLd = {
     {
       "@type": ["LocalBusiness", "TravelAgency", "Store"],
       "@id": "https://balipocketwifi.com/#organization",
-      "name": "Bali Pocket WiFi",
-      "alternateName": ["WiFi Rental Bali", "Sewa WiFi Bali Pocket", "Bali WiFi Pocket Rental"],
+      "name": "Bali Pocket WiFi - Sewa WiFi Pocket Bali",
+      "alternateName": [
+        "Sewa WiFi Pocket Bali",
+        "Sewa WiFi Bali",
+        "Sewa Bali Pocket WiFi",
+        "WiFi Pocket Bali",
+        "Bali Pocket WiFi Rental",
+        "Rental WiFi Bali",
+        "Pocket WiFi Bali"
+      ],
       "url": "https://balipocketwifi.com",
       "logo": "https://balipocketwifi.com/images/balipocketlogo.png",
       "image": "https://balipocketwifi.com/images/og-image.jpg",
-      "description": "#1 Unlimited 4G/LTE Pocket WiFi Rental in Bali. Instant pickup at Ngurah Rai Airport (DPS) or free hotel delivery across Canggu, Seminyak, Ubud, Uluwatu, & Kuta.",
+      "description": "Layanan Sewa WiFi Pocket Bali & Rental WiFi Bali #1 Unlimited 4G/LTE. Penjemputan gratis di Bandara Internasional Ngurah Rai Bali (DPS) atau antar langsung ke Hotel & Villa di Canggu, Seminyak, Ubud, Uluwatu, dan Kuta.",
       "telephone": "+6282342431717",
       "email": "wifibalipocket@gmail.com",
       "priceRange": "Rp 60.000 - Rp 1.600.000",
       "currenciesAccepted": "IDR, USD, AUD, EUR",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer, QRIS",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Jalan Ngurah Rai International Airport",
@@ -146,20 +160,42 @@ const jsonLd = {
         { "@type": "Place", "name": "Ubud" },
         { "@type": "Place", "name": "Uluwatu" },
         { "@type": "Place", "name": "Kuta" },
-        { "@type": "Place", "name": "Nusa Dua" }
+        { "@type": "Place", "name": "Nusa Dua" },
+        { "@type": "Place", "name": "Sanur" },
+        { "@type": "Place", "name": "Jimbaran" },
+        { "@type": "Place", "name": "Denpasar" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://balipocketwifi.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://balipocketwifi.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sewa WiFi Pocket Bali",
+          "item": "https://balipocketwifi.com/#plans"
+        }
       ]
     },
     {
       "@type": "Service",
       "@id": "https://balipocketwifi.com/#service",
-      "name": "Unlimited Pocket WiFi Rental Bali",
+      "name": "Sewa WiFi Pocket Bali Unlimited 4G/LTE",
+      "alternateName": "Bali Pocket WiFi Rental",
       "provider": { "@id": "https://balipocketwifi.com/#organization" },
-      "serviceType": "Pocket WiFi Rental",
+      "serviceType": "Pocket WiFi Rental / Sewa MiFi",
       "areaServed": { "@type": "AdministrativeArea", "name": "Bali, Indonesia" },
       "offers": [
         {
           "@type": "Offer",
-          "name": "Flex Plan (Daily)",
+          "name": "Flex Plan (Harian / Daily)",
           "price": "60000",
           "priceCurrency": "IDR",
           "availability": "https://schema.org/InStock",
@@ -167,7 +203,7 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          "name": "Starter Plan (3 Days)",
+          "name": "Starter Plan (3 Hari)",
           "price": "235000",
           "priceCurrency": "IDR",
           "availability": "https://schema.org/InStock",
@@ -175,7 +211,7 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          "name": "Explorer Plan (7 Days)",
+          "name": "Explorer Plan (7 Hari - Terlaris)",
           "price": "455000",
           "priceCurrency": "IDR",
           "availability": "https://schema.org/InStock",
@@ -183,7 +219,7 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          "name": "Nomad Plan (30 Days)",
+          "name": "Nomad Plan (30 Hari)",
           "price": "1600000",
           "priceCurrency": "IDR",
           "availability": "https://schema.org/InStock",
@@ -197,34 +233,50 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do I pick up the WiFi device at Bali Airport (DPS)?",
+          "name": "Bagaimana cara sewa wifi pocket di Bali dan ambil di Bandara Ngurah Rai (DPS)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our concierge team meets you directly inside Ngurah Rai Bali Airport (DPS) arrivals hall with a personalized name sign right after customs."
+            "text": "Pemesanan dilakukan online, kemudian tim concierge Bali Pocket WiFi menunggu Anda di gate kedatangan internasional maupun domestik Bandara Ngurah Rai (DPS) dengan membawa papan nama tepat setelah keluar pemeriksaan bea cukai / bagasi."
           }
         },
         {
           "@type": "Question",
-          "name": "Is the WiFi data truly unlimited across Bali?",
+          "name": "Berapa harga sewa wifi bali per hari?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! Enjoy high-speed 4G/LTE data with zero speed throttling across Canggu, Seminyak, Ubud, Uluwatu, Nusa Penida, and all popular areas in Bali."
+            "text": "Harga sewa WiFi Pocket Bali mulai dari Rp 60.000/hari untuk paket Flex harian, Rp 235.000 untuk 3 hari (Starter), Rp 455.000 untuk 7 hari (Explorer), dan Rp 1.600.000 untuk 30 hari (Nomad), seluruhnya sudah termasuk kuota 4G/LTE unlimited tanpa batas kuota."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I get hotel or villa delivery in Bali?",
+          "name": "Apakah kuota sewa pocket wifi bali benar-benar unlimited tanpa FUP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we provide direct delivery to your hotel or villa anywhere in Bali, including Canggu, Seminyak, Ubud, Kuta, Jimbaran, and Uluwatu."
+            "text": "Ya! Kami menyediakan kuota internet 4G/LTE unlimited berkecepatan tinggi tanpa throttling di seluruh destinasi populer Bali seperti Canggu, Seminyak, Ubud, Uluwatu, Kuta, Sanur, dan Nusa Penida."
           }
         },
         {
           "@type": "Question",
-          "name": "How many devices can connect to one pocket WiFi?",
+          "name": "Berapa banyak perangkat yang bisa terhubung ke 1 modem pocket wifi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Up to 5 to 8 devices can connect simultaneously to a single Bali Pocket WiFi router with long battery life."
+            "text": "Hingga 5 sampai 8 perangkat (smartphone, iPhone, Android, laptop MacBook/Windows, dan tablet) dapat terhubung secara bersamaan ke satu modem Bali Pocket WiFi dengan koneksi stabil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah bisa diantar langsung ke hotel atau villa di Canggu, Seminyak, atau Ubud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa! Kami melayani pengantaran dan penjemputan langsung ke hotel, resort, villa, maupun Airbnb di seluruh area Bali termasuk Canggu, Seminyak, Ubud, Kuta, Jimbaran, Sanur, dan Uluwatu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kenapa lebih menguntungkan sewa wifi pocket bali dibanding beli SIM card lokal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sewa WiFi pocket Bali jauh lebih hemat karena 1 modem dapat digunakan bersama oleh 5-8 orang sekaligus, bebas antre registrasi IMEI dan pajak bea cukai di bandara, serta baterai smartphone Anda tetap awet karena tidak menguras daya untuk hotspot tethering."
           }
         }
       ]

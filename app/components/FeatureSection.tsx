@@ -61,14 +61,14 @@ export default function FeatureSection({
             <div className="flex items-center gap-2 mb-4">
               <span className="w-2.5 h-2.5 rounded-full bg-[#A3E635]"></span>
               <span className="text-xs font-bold uppercase tracking-wider text-neutral-600">
-                #1 BALI POCKET WIFI RENTAL
+                #1 SEWA WIFI POCKET BALI &amp; RENTAL WIFI BALI
               </span>
             </div>
 
             {/* Headline with muted "losing touch" */}
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-950 leading-[1.15] tracking-tight">
-              Sewa WiFi Bali Pocket <br className="hidden sm:inline" />
-              & WiFi Rental Bali <br className="hidden sm:inline" />
+              Sewa Bali Pocket WiFi &amp; <br className="hidden sm:inline" />
+              Sewa WiFi Bali <br className="hidden sm:inline" />
               Without{" "}
               <span className="text-neutral-400 font-normal">
                 losing touch
@@ -97,14 +97,21 @@ export default function FeatureSection({
                   <Check className="w-3.5 h-3.5 stroke-[3] text-[#84CC16]" />
                 </div>
                 <span className="text-sm font-semibold text-neutral-800">
-                  Long Battery Life (15+ Hours)
+                  Baterai Tahan 15+ Jam Seharian
+                </span>
+                <span className="text-neutral-300">|</span>
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-emerald-600">
+                  <Check className="w-3.5 h-3.5 stroke-[3] text-[#84CC16]" />
+                </div>
+                <span className="text-sm font-semibold text-neutral-800">
+                  Bebas Registrasi IMEI
                 </span>
               </div>
             </div>
 
             {/* Paragraph narrative */}
             <p className="mt-6 text-sm sm:text-base text-neutral-600 leading-relaxed">
-              Bali Pocket WiFi provides seamless high-speed 4G/LTE internet coverage across Bali (Canggu, Seminyak, Ubud, Uluwatu, and DPS Airport). Rent portable WiFi in Bali with free airport pickup or hotel delivery.
+              Bali Pocket WiFi adalah solusi sewa WiFi pocket Bali &amp; rental WiFi Bali terpercaya dengan koneksi 4G/LTE super cepat tanpa batas FUP. Jangkauan sinyal stabil di seluruh Bali (Canggu, Seminyak, Ubud, Uluwatu, Kuta, Sanur, hingga Nusa Penida). Nikmati gratis antar-jemput di Bandara Ngurah Rai (DPS) atau langsung ke hotel/villa Anda.
             </p>
           </div>
 
@@ -139,7 +146,7 @@ export default function FeatureSection({
                   {/* Image */}
                   <Image
                     src={slide.src}
-                    alt={slide.title}
+                    alt={`${slide.title} - Sewa WiFi Pocket Bali Rental Sinyal Kuat`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 400px"

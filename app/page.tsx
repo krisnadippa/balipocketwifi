@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
+import SeoGuideSection from "./components/SeoGuideSection";
 import PricingSection from "./components/PricingSection";
 import FaqSection from "./components/FaqSection";
 import ContactSection from "./components/ContactSection";
@@ -161,6 +162,24 @@ export default function Home() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: "#features",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Guide Section ScrollTrigger
+    gsap.fromTo(
+      "#guide > div",
+      { opacity: 0, y: 35 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#guide",
           start: "top 80%",
           toggleActions: "play none none none",
         },
@@ -374,6 +393,12 @@ export default function Home() {
         <FeatureSection
           onBookClick={() => handleOpenBooking("Explorer", "Rp455k")}
           onReviewsClick={() => setIsReviewsOpen(true)}
+        />
+
+        {/* Comprehensive SEO Topical Authority & Comparison Guide */}
+        <SeoGuideSection
+          onRentClick={() => handleOpenBooking("Explorer", "Rp455k")}
+          onOpenCoverage={() => setIsCoverageOpen(true)}
         />
 
         {/* 4-Card Pricing Plans Section with Explorer dark highlight */}

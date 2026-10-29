@@ -35,23 +35,27 @@ export default function HeroSection({ onRentClick, isActive }: HeroSectionProps)
         {/* Center Main Headline & CTA */}
         <div className="relative z-10 my-auto py-6 sm:py-8 max-w-4xl flex flex-col items-center">
           {/* Kicker sub-headline */}
-          <div className="text-white/80 text-[10px] sm:text-xs md:text-sm font-bold tracking-widest uppercase mb-4 sm:mb-6">
-            #1 BALI POCKET WIFI RENTAL — SEWA WIFI BALI UNLIMITED 4G/LTE
+          <div className="text-white/90 text-[10px] sm:text-xs md:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 px-3 py-1 rounded-full bg-black/30 backdrop-blur-md border border-white/10">
+            #1 SEWA WIFI POCKET BALI — UNLIMITED 4G/LTE &amp; GRATIS ANTAR BANDARA DPS
           </div>
 
-          <h1 className="font-sans font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-[84px] text-white tracking-tight leading-[1.08] drop-shadow-md">
-            Bali Pocket WiFi &<br />
-            WiFi Rental Bali
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-[76px] text-white tracking-tight leading-[1.08] drop-shadow-md">
+            Sewa WiFi Pocket Bali &amp;<br className="hidden sm:inline" />
+            {" "}WiFi Rental Bali
           </h1>
 
+          <p className="mt-4 sm:mt-5 max-w-2xl text-xs sm:text-sm md:text-base text-white/90 font-medium leading-relaxed drop-shadow px-2">
+            Layanan sewa pocket WiFi Bali &amp; rental Bali pocket WiFi terbaik. Internet kuota Unlimited 4G/LTE tanpa FUP, bebas antre IMEI, connect 5–8 gadget, &amp; gratis antar hotel/villa di Canggu, Seminyak, Ubud, &amp; Bandara Ngurah Rai.
+          </p>
+
           {/* Ghost Button in the middle */}
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onRentClick}
               style={{ opacity: 0 }}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white/80 bg-transparent hover:bg-white text-white hover:text-neutral-950 text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-white/80 bg-white/10 backdrop-blur-sm hover:bg-white text-white hover:text-neutral-950 text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
             >
-              <span>Rent Now</span>
+              <span>Sewa Sekarang / Rent Now</span>
             </button>
           </div>
         </div>

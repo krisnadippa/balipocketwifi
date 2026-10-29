@@ -33,9 +33,9 @@ const plans: PlanItem[] = [
       AUD: "$23",
       EUR: "€14",
     },
-    subtext: "Perfect for short trips",
+    subtext: "Ideal untuk liburan singkat / weekend trip di Bali",
     features: ["Unlimited 4G Data", "5 Devices Support", "Airport Pickup"],
-    buttonText: "Select Plan",
+    buttonText: "Pilih Paket",
   },
   {
     id: "explorer",
@@ -48,14 +48,14 @@ const plans: PlanItem[] = [
       AUD: "$44",
       EUR: "€27",
     },
-    subtext: "Most popular choice",
+    subtext: "Paling populer untuk liburan seminggu di Bali",
     isRecommended: true,
     features: [
       "Unlimited 4G Data",
       "5 Devices Support",
       "Free Powerbank Rental",
     ],
-    buttonText: "Book Now",
+    buttonText: "Sewa Sekarang",
   },
   {
     id: "nomad",
@@ -68,9 +68,9 @@ const plans: PlanItem[] = [
       AUD: "$155",
       EUR: "€94",
     },
-    subtext: "Best value for long stays",
+    subtext: "Hemat maksimal untuk digital nomad / staycation",
     features: ["Unlimited 4G Data", "Priority Support", "Hotel Delivery"],
-    buttonText: "Select Plan",
+    buttonText: "Pilih Paket",
   },
   {
     id: "flex",
@@ -83,9 +83,9 @@ const plans: PlanItem[] = [
       AUD: "$5.9 /day",
       EUR: "€3.6 /day",
     },
-    subtext: "Extend your stay easily",
+    subtext: "Sewa harian fleksibel sesuai kebutuhan Anda",
     features: ["Same High Speed", "No Contract", "Instant Activation"],
-    buttonText: "Contact Us",
+    buttonText: "Hubungi Kami",
   },
 ];
 
@@ -96,11 +96,15 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
     <section id="plans" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-bold text-neutral-700 uppercase tracking-wider mb-3">
+          <span className="w-2 h-2 rounded-full bg-[#84CC16]"></span>
+          PAKET &amp; HARGA SEWA WIFI BALI RESMI
+        </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-950 tracking-tight">
-          Pricing Plans
+          Paket Sewa WiFi Pocket Bali
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-neutral-600">
-          Choose the best plan for your Bali adventure
+        <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
+          Pilihan paket rental WiFi pocket Bali murah dengan kuota Unlimited 4G/LTE tanpa FUP. Gratis antar-jemput di Bandara Ngurah Rai (DPS) dan hotel/villa seluruh Bali.
         </p>
 
         {/* Currency Switcher */}
