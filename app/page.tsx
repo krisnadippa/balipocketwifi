@@ -13,6 +13,8 @@ import Footer from "./components/Footer";
 import BookingModal from "./components/BookingModal";
 import CoverageModal from "./components/CoverageModal";
 import ReviewsModal from "./components/ReviewsModal";
+import TermsModal from "./components/TermsModal";
+import AirportMeetingSection from "./components/AirportMeetingSection";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,6 +27,7 @@ export default function Home() {
   });
   const [isCoverageOpen, setIsCoverageOpen] = useState(false);
   const [isReviewsOpen, setIsReviewsOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   // Preloader State Hooks
   const [isLoading, setIsLoading] = useState(true);
@@ -381,6 +384,7 @@ export default function Home() {
       <Navbar
         onOpenBooking={() => handleOpenBooking()}
         onOpenCoverage={() => setIsCoverageOpen(true)}
+        onOpenTerms={() => setIsTermsOpen(true)}
         isPageRevealed={heroActive}
       />
 
@@ -393,6 +397,12 @@ export default function Home() {
         <FeatureSection
           onBookClick={() => handleOpenBooking("Explorer", "Rp455k")}
           onReviewsClick={() => setIsReviewsOpen(true)}
+        />
+
+        {/* Airport Meeting & Return Points (Circle K & FRESH) */}
+        <AirportMeetingSection
+          onOpenTerms={() => setIsTermsOpen(true)}
+          onOpenBooking={() => handleOpenBooking("Explorer", "Rp455k")}
         />
 
         {/* Comprehensive SEO Topical Authority & Comparison Guide */}
@@ -414,7 +424,10 @@ export default function Home() {
       </main>
 
       {/* Luxury Dark Footer */}
-      <Footer onOpenCoverage={() => setIsCoverageOpen(true)} />
+      <Footer
+        onOpenCoverage={() => setIsCoverageOpen(true)}
+        onOpenTerms={() => setIsTermsOpen(true)}
+      />
 
       {/* Interactive Modals */}
       <BookingModal
@@ -422,6 +435,7 @@ export default function Home() {
         onClose={() => setIsBookingOpen(false)}
         selectedPlanName={selectedPlanInfo.name}
         selectedPlanPrice={selectedPlanInfo.price}
+        onOpenTerms={() => setIsTermsOpen(true)}
       />
 
       <CoverageModal
@@ -432,6 +446,11 @@ export default function Home() {
       <ReviewsModal
         isOpen={isReviewsOpen}
         onClose={() => setIsReviewsOpen(false)}
+      />
+
+      <TermsModal
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
       />
     </div>
   );

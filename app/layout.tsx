@@ -233,10 +233,18 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Bagaimana cara sewa wifi pocket di Bali dan ambil di Bandara Ngurah Rai (DPS)?",
+          "name": "Di mana titik temu (meeting point) ambil & pengembalian WiFi di Bandara Ngurah Rai (DPS)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pemesanan dilakukan online, kemudian tim concierge Bali Pocket WiFi menunggu Anda di gate kedatangan internasional maupun domestik Bandara Ngurah Rai (DPS) dengan membawa papan nama tepat setelah keluar pemeriksaan bea cukai / bagasi."
+            "text": "Titik ambil WiFi di Bandara Ngurah Rai adalah di depan minimarket Circle K (area kedatangan, jalan sekitar 50 meter keluar melewati kerumunan penjemput). Titik pengembalian adalah di depan stand FRESH Juice & Healthy Foods (area keberangkatan, sebelum pintu departure gate)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa uang deposit jaminan (security deposit) sewa wifi di Bali?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uang deposit jaminan adalah USD 50 atau IDR 500.000 per unit modem dan wajib dibayarkan berupa CASH ONLY saat serah terima. Uang deposit akan dikembalikan 100% penuh tunai saat departure di bandara setelah 4 item kelengkapan (modem router, kabel, adaptor, pouch) dikembalikan lengkap."
           }
         },
         {

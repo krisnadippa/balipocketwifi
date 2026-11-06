@@ -8,10 +8,16 @@ import { Menu, X, Wifi, Sparkles } from "lucide-react";
 interface NavbarProps {
   onOpenBooking?: (planName?: string) => void;
   onOpenCoverage?: () => void;
+  onOpenTerms?: () => void;
   isPageRevealed?: boolean;
 }
 
-export default function Navbar({ onOpenBooking, onOpenCoverage, isPageRevealed = true }: NavbarProps) {
+export default function Navbar({
+  onOpenBooking,
+  onOpenCoverage,
+  onOpenTerms,
+  isPageRevealed = true,
+}: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -32,6 +38,7 @@ export default function Navbar({ onOpenBooking, onOpenCoverage, isPageRevealed =
     { label: "Plans", href: "#plans" },
     { label: "Coverage", href: "#coverage", onClick: onOpenCoverage },
     { label: "FAQ", href: "#faq" },
+    { label: "T&C", href: "#terms", onClick: onOpenTerms },
   ];
 
   const handleNavClick = (

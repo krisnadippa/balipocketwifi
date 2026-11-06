@@ -6,9 +6,10 @@ import { ArrowRight, Check, Send } from "lucide-react";
 
 interface FooterProps {
   onOpenCoverage?: () => void;
+  onOpenTerms?: () => void;
 }
 
-export default function Footer({ onOpenCoverage }: FooterProps) {
+export default function Footer({ onOpenCoverage, onOpenTerms }: FooterProps) {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -72,15 +73,27 @@ export default function Footer({ onOpenCoverage }: FooterProps) {
         <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-400">
           {/* Left Navigation Links */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8 font-medium">
+            <a href="#meeting-point" className="hover:text-white transition-colors">
+              Meeting Point
+            </a>
             <button
               onClick={onOpenCoverage}
               className="hover:text-white transition-colors cursor-pointer"
             >
               Coverage Map
             </button>
-            <a href="#terms" className="hover:text-white transition-colors">
-              Terms of Use
-            </a>
+            {onOpenTerms ? (
+              <button
+                onClick={onOpenTerms}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                Terms &amp; Conditions (T&amp;C)
+              </button>
+            ) : (
+              <a href="#terms" className="hover:text-white transition-colors">
+                Terms &amp; Conditions
+              </a>
+            )}
             <a href="#faq" className="hover:text-white transition-colors">
               FAQ
             </a>

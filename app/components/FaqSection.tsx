@@ -10,9 +10,14 @@ interface FaqItem {
 
 const faqsId: FaqItem[] = [
   {
-    question: "Bagaimana cara sewa wifi pocket di Bali dan ambil di Bandara Ngurah Rai (DPS)?",
+    question: "Di mana titik temu (meeting point) ambil & pengembalian WiFi di Bandara Ngurah Rai (DPS)?",
     answer:
-      "Pemesanan dilakukan online terlebih dahulu. Saat Anda mendarat di Bandara Internasional atau Domestik Ngurah Rai Bali (DPS), staf concierge kami akan menunggu langsung di gate kedatangan sambil membawa papan nama dengan nama Anda setelah keluar dari pemeriksaan bea cukai. Untuk pengembalian, Anda cukup menyerahkan kembali ke staf kami di terminal keberangkatan sebelum check-in, atau menitipkannya di resepsionis hotel/villa Anda.",
+      "Titik Pengambilan (Pickup): Setelah selesai pemeriksaan bea cukai & ambil bagasi, jalan sekitar 50 meter lebih jauh ke luar melewati kerumunan penjemput. Temui staf kami tepat di depan Circle K convenience store (Area Kedatangan).\n\nTitik Pengembalian (Return): Sebelum Anda masuk ke departure gate (Area Keberangkatan), temui staf kami di depan stand FRESH Juice & Healthy Foods. Serahkan seluruh kelengkapan (modem, kabel, adaptor, pouch) dan deposit tunai Anda langsung dikembalikan 100% di tempat.",
+  },
+  {
+    question: "Berapa uang deposit jaminan (security deposit) dan apa syarat pengembaliannya?",
+    answer:
+      "Uang deposit jaminan adalah sebesar USD 50 atau IDR 500.000 (Rp 500.000) per unit dan WAJIB dibayarkan secara CASH ONLY (TUNAI) saat pengambilan di Circle K. Uang deposit akan dikembalikan 100% tunai saat kepulangan (departure) di bandara setelah Anda mengembalikan seluruh kelengkapan unit (Router modem, kabel charger, kepala adaptor, dan tas pouch).",
   },
   {
     question: "Berapa harga sewa wifi bali per hari?",
@@ -43,9 +48,14 @@ const faqsId: FaqItem[] = [
 
 const faqsEn: FaqItem[] = [
   {
-    question: "How does pickup and return at Bali Airport (DPS) work?",
+    question: "Where are the Airport (DPS) meeting point and return locations?",
     answer:
-      "Our concierge team waits for you in the arrivals hall (international or domestic) directly after customs clearance holding a signboard with your name. For departure return, simply hand the device back to our airport staff at the departure terminal before check-in or leave it at your hotel reception.",
+      "Pickup Meeting Point: After customs and baggage claim, please walk approximately 50 meters further outside past the crowd of drivers. Our team will meet you right at the Circle K convenience store (Arrival Area).\n\nReturn Location: Meet our staff in front of FRESH Juice & Healthy Foods (Departure Area), located right before you enter the departure gate. Hand over the device and receive your cash deposit back on the spot.",
+  },
+  {
+    question: "What is the security deposit policy and how is it refunded?",
+    answer:
+      "A refundable security deposit of USD 50 or IDR 500,000 per unit is required and payable in CASH ONLY upon device collection. The deposit will be 100% refunded in cash upon your departure at the airport (FRESH meeting point) once all items are returned complete: router, charging cable, adapter, and pouch.",
   },
   {
     question: "How much does pocket WiFi rental in Bali cost?",

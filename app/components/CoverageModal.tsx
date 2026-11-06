@@ -127,12 +127,10 @@ export default function CoverageModal({ isOpen, onClose }: CoverageModalProps) {
           <CheckCircle2 className="w-5 h-5 text-[#A3E635] shrink-0 mt-0.5" />
           <div className="text-xs">
             <span className="font-bold text-white block">
-              Direct Airport Terminal Pickup (DPS)
+              Ngurah Rai Airport (DPS) Pickup &amp; Return
             </span>
             <span className="text-neutral-400">
-              Meet our airport team right after the customs exit hall at Ngurah
-              Rai International Airport. We test your WiFi device together before
-              you leave.
+              Titik Ambil: <strong>Circle K</strong> (area kedatangan, jalan ~50m keluar dari customs). Titik Kembali: <strong>FRESH Juice</strong> (area keberangkatan sebelum departure gate). Deposit USD 50 / IDR 500k (Cash only) dikembalikan 100% tunai saat departure.
             </span>
           </div>
         </div>

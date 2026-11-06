@@ -8,6 +8,7 @@ interface BookingModalProps {
   onClose: () => void;
   selectedPlanName?: string;
   selectedPlanPrice?: string;
+  onOpenTerms?: () => void;
 }
 
 const getTodayDateString = (offsetDays = 0) => {
@@ -60,6 +61,7 @@ export default function BookingModal({
   onClose,
   selectedPlanName = "Explorer",
   selectedPlanPrice = "Rp455k",
+  onOpenTerms,
 }: BookingModalProps) {
   const [plan, setPlan] = useState(selectedPlanName);
   const [pickupLocation, setPickupLocation] = useState("airport");
@@ -130,10 +132,11 @@ export default function BookingModal({
 📋 *Booking Details:*
 • *Plan:* ${plan}
 • *Rental Period:* ${formattedStartDate} to ${formattedEndDate} (${days} Days)
-• *Total Cost:* Rp ${totalPrice.toLocaleString("id-ID")}
-• *Pickup Method:* ${pickupLocation === "airport" ? "Bali Airport (DPS)" : "Hotel Delivery"}
+• *Rental Cost:* Rp ${totalPrice.toLocaleString("id-ID")}
+• *Security Deposit:* USD 50 / IDR 500,000 (Cash only, 100% refundable at departure)
+• *Pickup Method:* ${pickupLocation === "airport" ? "Bali Airport - Circle K (Arrival Area)" : "Hotel Delivery"}
 ${pickupLocation === "airport" 
-  ? `• *Flight Number:* ${flightNumber || "-"}` 
+  ? `• *Flight Number:* ${flightNumber || "-"}\n• *Return Location:* FRESH Juice & Healthy Foods (Departure Gate)` 
   : `• *Hotel Address:* ${hotelAddress}`
 }
 
@@ -142,7 +145,7 @@ ${pickupLocation === "airport"
 • *Email:* ${email}
 • *WhatsApp:* ${whatsapp}
 
-Please confirm my booking. Thank you!`;
+I agree to the T&C (USD 50 / IDR 500k cash deposit returned upon complete item return at departure). Please confirm my booking. Thank you!`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${adminPhone}&text=${encodedText}`;
@@ -178,10 +181,18 @@ Please confirm my booking. Thank you!`;
                 <span className="text-neutral-500">Pickup Location:</span>
                 <span className="font-semibold text-neutral-900 text-right capitalize">
                   {pickupLocation === "airport"
-                    ? "Ngurah Rai Airport (DPS) Terminal"
+                    ? "Circle K (Arrival Area, walk ~50m outside)"
                     : `Hotel: ${hotelAddress || "Bali Resort"}`}
                 </span>
               </div>
+              {pickupLocation === "airport" && (
+                <div className="flex justify-between gap-4">
+                  <span className="text-neutral-500">Return Location:</span>
+                  <span className="font-semibold text-neutral-900 text-right">
+                    FRESH (Departure, before gate)
+                  </span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span className="text-neutral-500">Rental Period:</span>
                 <span className="font-semibold text-neutral-900">
@@ -189,9 +200,15 @@ Please confirm my booking. Thank you!`;
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-neutral-500">Total Price:</span>
+                <span className="text-neutral-500">Rental Fee:</span>
                 <span className="font-bold text-neutral-950">
                   {formattedPrice}
+                </span>
+              </div>
+              <div className="flex justify-between text-amber-800 bg-amber-50 p-2 rounded-lg">
+                <span className="font-medium">Refundable Deposit:</span>
+                <span className="font-bold">
+                  USD 50 / IDR 500,000 (Cash Only)
                 </span>
               </div>
               <div className="flex justify-between">
@@ -217,10 +234,21 @@ Please confirm my booking. Thank you!`;
               <h3 className="font-display text-xl sm:text-3xl font-bold text-neutral-950 leading-tight">
                 Rent Bali Pocket WiFi
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-                Zero deposit required with valid passport. Free airport terminal
-                handover.
+              <p className="text-xs sm:text-sm text-neutral-600 mt-1">
+                Cash deposit: <strong>USD 50 atau IDR 500.000</strong> (Cash only, 100% dikembalikan saat departure di bandara).
               </p>
+              <div className="mt-2.5 p-2.5 rounded-xl bg-neutral-50 border border-neutral-200/80 text-[11px] text-neutral-600 flex items-center justify-between">
+                <span>📍 Ambil di <strong>Circle K</strong> • Kembalikan di <strong>FRESH</strong></span>
+                {onOpenTerms && (
+                  <button
+                    type="button"
+                    onClick={onOpenTerms}
+                    className="font-bold text-neutral-950 underline underline-offset-2 hover:text-[#65A30D] cursor-pointer shrink-0 ml-2"
+                  >
+                    Lihat T&amp;C
+                  </button>
+                )}
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -310,7 +338,7 @@ Please confirm my booking. Thank you!`;
                 </div>
 
                 {pickupLocation === "airport" ? (
-                  <div className="mt-2">
+                  <div className="mt-2 space-y-1.5">
                     <input
                       type="text"
                       placeholder="Arrival Flight No. (e.g. GA402 / QZ504) - Optional"
@@ -318,6 +346,10 @@ Please confirm my booking. Thank you!`;
                       onChange={(e) => setFlightNumber(e.target.value)}
                       className="w-full px-3 py-2 rounded-xl border border-neutral-200 text-xs outline-none focus:border-neutral-950 bg-white"
                     />
+                    <div className="px-3 py-2 bg-neutral-50 rounded-xl border border-neutral-200/70 text-[11px] text-neutral-600 flex flex-col gap-0.5">
+                      <span>• <strong>Ambil (Arrival):</strong> Circle K (jalan ~50m keluar dari customs)</span>
+                      <span>• <strong>Kembali (Departure):</strong> FRESH Juice (sebelum departure gate)</span>
+                    </div>
                   </div>
                 ) : (
                   <div className="mt-2">
@@ -379,8 +411,15 @@ Please confirm my booking. Thank you!`;
                 </div>
                 <div className="h-px bg-neutral-200/50 my-1" />
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-bold text-neutral-800">Total Price:</span>
+                  <span className="text-xs font-bold text-neutral-800">Rental Fee:</span>
                   <span className="text-sm font-black text-neutral-950">{formattedPrice}</span>
+                </div>
+                <div className="flex justify-between items-center text-[11px] text-amber-900 bg-amber-100/60 p-2 rounded-xl border border-amber-200">
+                  <span className="font-semibold">Security Deposit (Cash Only):</span>
+                  <span className="font-extrabold">USD 50 / IDR 500k</span>
+                </div>
+                <div className="text-[10px] text-neutral-500 text-center pt-0.5">
+                  *Deposit tunai 100% dikembalikan saat departure di bandara.
                 </div>
               </div>
 

@@ -232,6 +232,31 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
           );
         })}
       </div>
+
+      {/* T&C & Meeting Point Notice Bar under pricing */}
+      <div className="mt-10 p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="flex items-center gap-3">
+          <span className="w-8 h-8 rounded-full bg-[#ECFCCB] text-[#65A30D] font-bold flex items-center justify-center shrink-0">
+            ✓
+          </span>
+          <div>
+            <div className="font-bold text-neutral-900 text-xs sm:text-sm">
+              Deposit USD 50 / IDR 500k (Cash Only) • 100% Dikembalikan Saat Departure
+            </div>
+            <div className="text-neutral-500 text-[11px] mt-0.5">
+              Titik Ambil: <strong>Circle K (Kedatangan)</strong> • Titik Kembali: <strong>FRESH Juice (Keberangkatan)</strong>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#meeting-point"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white font-semibold text-xs shrink-0 transition-colors"
+        >
+          <span>Lihat Foto Titik Temu</span>
+          <span className="text-[#A3E635]">→</span>
+        </a>
+      </div>
     </section>
   );
 }
