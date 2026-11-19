@@ -104,7 +104,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
           Paket Sewa WiFi Pocket Bali
         </h2>
         <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto">
-          Pilihan paket rental WiFi pocket Bali murah dengan kuota Unlimited 4G/LTE tanpa FUP. Gratis antar-jemput di Bandara Ngurah Rai (DPS) dan hotel/villa seluruh Bali.
+          Pilihan paket rental WiFi pocket Bali murah dengan kuota Unlimited 4G/LTE tanpa FUP. Gratis antar-jemput di Bandara Ngurah Rai (DPS) dan pengantaran ke hotel/villa seluruh Bali.
         </p>
 
         {/* Currency Switcher */}

@@ -45,7 +45,7 @@ export default function HeroSection({ onRentClick, isActive }: HeroSectionProps)
           </h1>
 
           <p className="mt-4 sm:mt-5 max-w-2xl text-xs sm:text-sm md:text-base text-white/90 font-medium leading-relaxed drop-shadow px-2">
-            Layanan sewa pocket WiFi Bali &amp; rental Bali pocket WiFi terbaik. Internet kuota Unlimited 4G/LTE tanpa FUP, bebas antre IMEI, connect 5–8 gadget, &amp; gratis antar hotel/villa di Canggu, Seminyak, Ubud, &amp; Bandara Ngurah Rai.
+            Layanan sewa pocket WiFi Bali &amp; rental Bali pocket WiFi terbaik. Internet kuota Unlimited 4G/LTE tanpa FUP, bebas antre IMEI, connect 5–8 gadget, gratis antar Bandara DPS, &amp; pengantaran hotel seluruh Bali.
           </p>
 
           {/* Ghost Button in the middle */}

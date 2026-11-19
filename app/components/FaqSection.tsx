@@ -37,7 +37,7 @@ const faqsId: FaqItem[] = [
   {
     question: "Apakah bisa diantar langsung ke villa atau hotel di Canggu, Seminyak, atau Ubud?",
     answer:
-      "Tentu saja! Kami melayani pengantaran kurir langsung di hari yang sama ke hotel, villa, resort, maupun Airbnb di seluruh area Canggu, Seminyak, Kuta, Legian, Sanur, Ubud, Nusa Dua, Jimbaran, dan Uluwatu.",
+      "Tentu saja! Kami melayani pengantaran kurir langsung di hari yang sama ke hotel, villa, resort, maupun Airbnb di seluruh area Bali. Ambil & kembalikan di Bandara Ngurah Rai (DPS) adalah GRATIS. Untuk pengantaran langsung ke hotel/villa dikenakan biaya ongkir kurir flat Rp 75.000 (area Canggu, Seminyak, Kuta, Legian, Sanur, Nusa Dua, Jimbaran, Uluwatu) dan Rp 100.000 untuk area Ubud.",
   },
   {
     question: "Kenapa lebih menguntungkan sewa wifi pocket bali dibanding beli SIM card lokal?",
@@ -75,7 +75,7 @@ const faqsEn: FaqItem[] = [
   {
     question: "Do you offer hotel or villa delivery in Bali?",
     answer:
-      "Absolutely. We provide direct same-day delivery to your hotel, villa, or Airbnb anywhere across Canggu, Seminyak, Ubud, Kuta, Jimbaran, Sanur, and Uluwatu.",
+      "Absolutely. We provide direct same-day courier delivery to your hotel, villa, or Airbnb anywhere across Bali. Airport pickup & return at Ngurah Rai (DPS) is 100% FREE. For direct hotel delivery, a courier fee applies: flat Rp 75,000 for popular areas (Canggu, Seminyak, Kuta, Sanur, Jimbaran, Uluwatu, Nusa Dua) and Rp 100,000 for Ubud.",
   },
   {
     question: "Why rent a pocket WiFi instead of buying local SIM cards?",

@@ -157,6 +157,13 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 </p>
               </div>
             </div>
+
+            <div className="p-2.5 rounded-xl bg-white border border-neutral-200 text-neutral-600 text-[11px] leading-relaxed">
+              <strong>{lang === "id" ? "Ketentuan Ongkir Hotel/Villa:" : "Hotel/Villa Delivery Rates:"}</strong>{" "}
+              {lang === "id"
+                ? "Pengambilan & pengembalian di Bandara DPS adalah GRATIS. Pengantaran ke hotel/villa dikenakan ongkir kurir flat Rp 75.000 (Kuta, Seminyak, Canggu, Sanur, Jimbaran, Uluwatu, Nusa Dua) dan Rp 100.000 untuk area Ubud."
+                : "Airport DPS pickup & return is 100% FREE. Direct hotel/villa courier delivery is Rp 75,000 (~$4.8) for popular beach areas and Rp 100,000 (~$6.4) for Ubud."}
+            </div>
           </div>
 
           {/* 3. Package Return Completeness */}

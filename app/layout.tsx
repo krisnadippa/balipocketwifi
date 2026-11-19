@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ),
   title: "Sewa WiFi Pocket Bali & Sewa WiFi Bali #1 — Bali Pocket WiFi Rental",
   description:
-    "Sewa WiFi Pocket Bali & Rental WiFi Bali #1 Unlimited 4G/LTE. Layanan sewa pocket WiFi Bali murah, kuota tanpa batas, bebas antre IMEI, & gratis antar hotel / Bandara Ngurah Rai (DPS).",
+    "Sewa WiFi Pocket Bali & Rental WiFi Bali #1 Unlimited 4G/LTE. Layanan sewa pocket WiFi Bali murah, kuota tanpa batas, bebas antre IMEI, gratis antar Bandara DPS & antar hotel seluruh Bali.",
   keywords: [
     "sewa wifi pocket bali",
     "sewa wifi bali",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sewa WiFi Pocket Bali & Sewa WiFi Bali #1 — Bali Pocket WiFi Rental",
     description:
-      "Sewa Pocket WiFi Bali #1 Unlimited 4G/LTE. Gratis penjemputan di Bandara Ngurah Rai (DPS) atau antar ke Hotel / Villa seluruh Bali.",
+      "Sewa Pocket WiFi Bali #1 Unlimited 4G/LTE. Gratis penjemputan di Bandara Ngurah Rai (DPS) & pengantaran hotel seluruh Bali.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
@@ -276,7 +276,7 @@ const jsonLd = {
           "name": "Apakah bisa diantar langsung ke hotel atau villa di Canggu, Seminyak, atau Ubud?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bisa! Kami melayani pengantaran dan penjemputan langsung ke hotel, resort, villa, maupun Airbnb di seluruh area Bali termasuk Canggu, Seminyak, Ubud, Kuta, Jimbaran, Sanur, dan Uluwatu."
+            "text": "Bisa! Kami melayani pengantaran kurir langsung ke hotel, resort, villa, maupun Airbnb di seluruh Bali. Penjemputan di Bandara DPS gratis, sedangkan pengantaran hotel dikenakan ongkir kurir flat Rp 75.000 (area Canggu, Seminyak, Kuta, Sanur, Uluwatu, Nusa Dua) dan Rp 100.000 untuk area Ubud."
           }
         },
         {

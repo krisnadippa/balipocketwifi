@@ -134,10 +134,10 @@ export default function BookingModal({
 • *Rental Period:* ${formattedStartDate} to ${formattedEndDate} (${days} Days)
 • *Rental Cost:* Rp ${totalPrice.toLocaleString("id-ID")}
 • *Security Deposit:* USD 50 / IDR 500,000 (Cash only, 100% refundable at departure)
-• *Pickup Method:* ${pickupLocation === "airport" ? "Bali Airport - Circle K (Arrival Area)" : "Hotel Delivery"}
+• *Pickup Method:* ${pickupLocation === "airport" ? "Bali Airport - Circle K (Arrival Area) [Free]" : "Hotel Delivery"}
 ${pickupLocation === "airport" 
   ? `• *Flight Number:* ${flightNumber || "-"}\n• *Return Location:* FRESH Juice & Healthy Foods (Departure Gate)` 
-  : `• *Hotel Address:* ${hotelAddress}`
+  : `• *Hotel Address:* ${hotelAddress}\n• *Delivery Fee:* Ongkir Rp 75k / Ubud Rp 100k`
 }
 
 👤 *Contact Info:*
@@ -181,8 +181,8 @@ I agree to the T&C (USD 50 / IDR 500k cash deposit returned upon complete item r
                 <span className="text-neutral-500">Pickup Location:</span>
                 <span className="font-semibold text-neutral-900 text-right capitalize">
                   {pickupLocation === "airport"
-                    ? "Circle K (Arrival Area, walk ~50m outside)"
-                    : `Hotel: ${hotelAddress || "Bali Resort"}`}
+                    ? "Circle K (Arrival Area, walk ~50m outside) [Gratis]"
+                    : `Hotel: ${hotelAddress || "Bali Resort"} (Ongkir Rp 75k / Ubud 100k)`}
                 </span>
               </div>
               {pickupLocation === "airport" && (
@@ -352,7 +352,7 @@ I agree to the T&C (USD 50 / IDR 500k cash deposit returned upon complete item r
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-2">
+                  <div className="mt-2 space-y-1.5">
                     <input
                       type="text"
                       required
@@ -361,6 +361,11 @@ I agree to the T&C (USD 50 / IDR 500k cash deposit returned upon complete item r
                       onChange={(e) => setHotelAddress(e.target.value)}
                       className="w-full px-3 py-2 rounded-xl border border-neutral-200 text-xs outline-none focus:border-neutral-950 bg-white"
                     />
+                    <div className="px-3 py-2 bg-amber-50/80 rounded-xl border border-amber-200/80 text-[11px] text-neutral-700 flex flex-col gap-0.5">
+                      <span>• <strong>Ongkir Hotel/Villa:</strong> Rp 75.000 (Seminyak, Canggu, Kuta, Sanur, Uluwatu, dll)</span>
+                      <span>• <strong>Khusus Area Ubud:</strong> Rp 100.000</span>
+                      <span className="text-[10px] text-neutral-500">*Gratis antar-jemput hanya berlaku di Bandara DPS (Circle K / FRESH).</span>
+                    </div>
                   </div>
                 )}
               </div>

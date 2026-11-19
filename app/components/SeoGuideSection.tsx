@@ -12,14 +12,14 @@ export default function SeoGuideSection({
   onOpenCoverage,
 }: SeoGuideSectionProps) {
   const deliveryLocations = [
-    { name: "Bandara Ngurah Rai (DPS)", tag: "Free Meet & Greet" },
-    { name: "Canggu & Pererenan", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Seminyak & Kerobokan", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Ubud & Tegallalang", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Kuta & Legian", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Uluwatu & Jimbaran", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Sanur & Denpasar", tag: "Gratis Antar Hotel/Villa" },
-    { name: "Nusa Dua & Benoa", tag: "Gratis Antar Hotel/Villa" },
+    { name: "Bandara Ngurah Rai (DPS)", tag: "Free Meet & Greet (Gratis)", isFree: true },
+    { name: "Canggu & Pererenan", tag: "Ongkir Hotel Rp 75k", isFree: false },
+    { name: "Seminyak & Kerobokan", tag: "Ongkir Hotel Rp 75k", isFree: false },
+    { name: "Ubud & Tegallalang", tag: "Ongkir Hotel Rp 100k", isFree: false },
+    { name: "Kuta & Legian", tag: "Ongkir Hotel Rp 75k", isFree: false },
+    { name: "Uluwatu & Jimbaran", tag: "Ongkir Hotel Rp 75k", isFree: false },
+    { name: "Sanur & Denpasar", tag: "Ongkir Hotel Rp 75k", isFree: false },
+    { name: "Nusa Dua & Benoa", tag: "Ongkir Hotel Rp 75k", isFree: false },
   ];
 
   return (
@@ -108,7 +108,7 @@ export default function SeoGuideSection({
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-neutral-200/60 text-xs font-semibold text-neutral-500">
-            ✓ Bebas Ongkir Area Populer
+            ✓ Gratis Bandara DPS • Ongkir Hotel Mulai 75k
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ export default function SeoGuideSection({
                 <td className="py-4 px-3 sm:px-4 font-semibold">Layanan Antar Bandara &amp; Hotel</td>
                 <td className="py-4 px-3 sm:px-4 bg-lime-50/70 font-bold text-emerald-700 rounded-b-xl">
                   <div className="flex items-center gap-1.5">
-                    <Check className="w-4 h-4 text-[#84CC16]" /> Gratis Antar-Jemput
+                    <Check className="w-4 h-4 text-[#84CC16]" /> Gratis Bandara (Hotel mulai 75k)
                   </div>
                 </td>
                 <td className="py-4 px-3 sm:px-4 text-neutral-500">Harus cari konter sendiri</td>
@@ -203,10 +203,10 @@ export default function SeoGuideSection({
             CAKUPAN PENGANTARAN SEWA WIFI BALI
           </div>
           <h3 className="font-sans font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white">
-            Gratis Antar Jemput di Seluruh Destinasi Wisata Bali
+            Gratis Antar Bandara DPS &amp; Pengantaran Hotel Seluruh Bali
           </h3>
-          <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-2xl">
-            Layanan sewa WiFi pocket Bali kami melayani pengantaran di hari yang sama untuk mempermudah liburan Anda tanpa repot.
+          <p className="mt-3 text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-2xl">
+            Pengambilan &amp; pengembalian <strong className="text-white">Gratis di Bandara Ngurah Rai (DPS)</strong>. Untuk pengantaran langsung ke hotel/villa: area populer (Kuta, Seminyak, Canggu, Sanur, Jimbaran, Uluwatu, Nusa Dua) dikenakan ongkir kurir flat Rp 75k, dan khusus area Ubud Rp 100k.
           </p>
 
           {/* Location Badges Grid */}
@@ -214,12 +214,20 @@ export default function SeoGuideSection({
             {deliveryLocations.map((loc, idx) => (
               <div
                 key={idx}
-                className="p-3 rounded-2xl bg-neutral-900/90 border border-neutral-800 flex flex-col justify-between"
+                className={`p-3 rounded-2xl bg-neutral-900/90 border flex flex-col justify-between transition-colors ${
+                  loc.isFree
+                    ? "border-[#A3E635]/60 bg-neutral-900"
+                    : "border-neutral-800"
+                }`}
               >
                 <span className="text-xs sm:text-sm font-bold text-white">
                   {loc.name}
                 </span>
-                <span className="mt-1 text-[10px] text-[#A3E635] font-medium">
+                <span
+                  className={`mt-1 text-[10px] font-semibold ${
+                    loc.isFree ? "text-[#A3E635]" : "text-amber-300"
+                  }`}
+                >
                   {loc.tag}
                 </span>
               </div>

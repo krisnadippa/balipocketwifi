@@ -111,7 +111,7 @@ export default function FeatureSection({
 
             {/* Paragraph narrative */}
             <p className="mt-6 text-sm sm:text-base text-neutral-600 leading-relaxed">
-              Bali Pocket WiFi adalah solusi sewa WiFi pocket Bali &amp; rental WiFi Bali terpercaya dengan koneksi 4G/LTE super cepat tanpa batas FUP. Jangkauan sinyal stabil di seluruh Bali (Canggu, Seminyak, Ubud, Uluwatu, Kuta, Sanur, hingga Nusa Penida). Nikmati gratis antar-jemput di Bandara Ngurah Rai (DPS) atau langsung ke hotel/villa Anda.
+              Bali Pocket WiFi adalah solusi sewa WiFi pocket Bali &amp; rental WiFi Bali terpercaya dengan koneksi 4G/LTE super cepat tanpa batas FUP. Jangkauan sinyal stabil di seluruh Bali (Canggu, Seminyak, Ubud, Uluwatu, Kuta, Sanur, hingga Nusa Penida). Nikmati gratis antar-jemput di Bandara Ngurah Rai (DPS) atau pengantaran langsung ke hotel/villa Anda.
             </p>
           </div>
 
