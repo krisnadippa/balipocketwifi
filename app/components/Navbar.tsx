@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Wifi, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onOpenBooking?: (planName?: string) => void;

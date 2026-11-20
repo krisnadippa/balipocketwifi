@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X, Shield, Smartphone, Zap, MapPin, ArrowRight, BatteryCharging, Users, Wifi } from "lucide-react";
+import { Check, Shield, MapPin, ArrowRight, BatteryCharging, Users } from "lucide-react";
 
 interface SeoGuideSectionProps {
   onRentClick: () => void;

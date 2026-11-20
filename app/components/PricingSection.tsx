@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Zap, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface PricingSectionProps {
   onSelectPlan: (planName: string, price: string) => void;

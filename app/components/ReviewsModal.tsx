@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Star, CheckCircle, ThumbsUp } from "lucide-react";
+import { X, Star, CheckCircle } from "lucide-react";
 import Image from "next/image";
 
 interface ReviewsModalProps {

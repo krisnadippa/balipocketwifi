@@ -3,14 +3,10 @@
 import { useState } from "react";
 import {
   X,
-  ShieldCheck,
   Banknote,
   MapPin,
   CheckCircle2,
-  AlertTriangle,
-  RotateCcw,
   Wifi,
-  FileText,
 } from "lucide-react";
 
 interface TermsModalProps {

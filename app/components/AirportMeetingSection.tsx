@@ -4,11 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import {
   MapPin,
-  Clock,
-  ArrowRight,
   ShieldCheck,
   CheckCircle2,
-  AlertCircle,
   Banknote,
   Maximize2,
   X,
@@ -22,7 +19,6 @@ interface AirportMeetingSectionProps {
 
 export default function AirportMeetingSection({
   onOpenTerms,
-  onOpenBooking,
 }: AirportMeetingSectionProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [pickupLang, setPickupLang] = useState<"en" | "cn">("en");

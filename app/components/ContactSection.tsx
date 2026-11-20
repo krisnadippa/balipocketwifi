@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { ArrowRight, Phone, MessageSquare, CheckCircle, Mail } from "lucide-react";
+import { ArrowRight, Phone, MessageSquare, CheckCircle } from "lucide-react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({

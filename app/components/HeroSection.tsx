@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Star, ShieldCheck, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
   onRentClick: () => void;

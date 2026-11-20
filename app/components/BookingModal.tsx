@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X, Check, MapPin } from "lucide-react";
 
 interface BookingModalProps {
@@ -60,7 +60,6 @@ export default function BookingModal({
   isOpen,
   onClose,
   selectedPlanName = "Explorer",
-  selectedPlanPrice = "Rp455k",
   onOpenTerms,
 }: BookingModalProps) {
   const [plan, setPlan] = useState(selectedPlanName);
@@ -74,8 +73,10 @@ export default function BookingModal({
   const [whatsapp, setWhatsapp] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Sync plan and dates when modal opens or prop changes
-  useEffect(() => {
+  // Sync plan and dates when modal opens or prop changes without triggering effect render cascade
+  const [prevProps, setPrevProps] = useState({ isOpen, selectedPlanName });
+  if (isOpen !== prevProps.isOpen || selectedPlanName !== prevProps.selectedPlanName) {
+    setPrevProps({ isOpen, selectedPlanName });
     if (isOpen) {
       setPlan(selectedPlanName);
       const todayStr = getTodayDateString(0);
@@ -83,7 +84,7 @@ export default function BookingModal({
       setEndDate(getDefaultEndDate(selectedPlanName, todayStr));
       setIsSuccess(false);
     }
-  }, [selectedPlanName, isOpen]);
+  }
 
   if (!isOpen) return null;
 

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { ArrowRight, Check, Send } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface FooterProps {
   onOpenCoverage?: () => void;

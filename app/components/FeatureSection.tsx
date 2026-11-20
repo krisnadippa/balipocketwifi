@@ -230,7 +230,7 @@ export default function FeatureSection({
 
               {/* Quote */}
               <p className="text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-                "Absolute lifesaver! Picked it up at the airport and had fast internet throughout my entire 3-week trip. Saved me so much hassle trying to find cafes with decent WiFi for remote work."
+                &ldquo;Absolute lifesaver! Picked it up at the airport and had fast internet throughout my entire 3-week trip. Saved me so much hassle trying to find cafes with decent WiFi for remote work.&rdquo;
               </p>
               <div className="mt-3 text-xs sm:text-sm text-neutral-400">
                 — Sarah J., Digital Nomad

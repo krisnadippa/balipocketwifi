@@ -1,6 +1,6 @@
 "use client";
 
-import { X, MapPin, Signal, CheckCircle2, Shield, Wifi } from "lucide-react";
+import { X, MapPin, CheckCircle2, Wifi } from "lucide-react";
 
 interface CoverageModalProps {
   isOpen: boolean;
